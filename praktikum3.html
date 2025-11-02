@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership Registration Form</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f6f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 5px;
+      font-size: 22px;
+      color: #111;
+    }
+
+    p {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #4d90fe;
+      box-shadow: 0 0 0 3px rgba(77,144,254,0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .section-title {
+      font-weight: 600;
+      margin-top: 10px;
+      color: #222;
+      font-size: 15px;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .options label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      accent-color: #4d90fe;
+      width: 16px;
+      height: 16px;
+    }
+
+    .agree {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    .agree input {
+      margin-top: 2px;
+    }
+
+    button {
+      background-color: #1777ff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #0e63d4;
+    }
+
+    @media (max-width: 480px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Membership Registration Form</h2>
+    <p>Please fill out the form below to become a member.</p>
+
+    <form>
+      <div class="row">
+        <div>
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Enter your first name" required>
+        </div>
+        <div>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Enter your last name" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email address" required>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        </div>
+      </div>
+
+      <div>
+        <label for="address1">Address Line 1</label>
+        <input type="text" id="address1" placeholder="Enter your address line 1">
+      </div>
+
+      <div>
+        <label for="address2">Address Line 2</label>
+        <input type="text" id="address2" placeholder="Enter your address line 2">
+      </div>
+
+      <div>
+        <label for="country">Country</label>
+        <select id="country">
+          <option>United States of America</option>
+          <option>Indonesia</option>
+          <option>United Kingdom</option>
+          <option>Australia</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="section-title">Membership Type</label>
+        <div class="options">
+          <label><input type="radio" name="membership" value="basic"> Basic</label>
+          <label><input type="radio" name="membership" value="premium"> Premium</label>
+          <label><input type="radio" name="membership" value="elite"> Elite</label>
+        </div>
+      </div>
+
+      <div>
+        <label class="section-title">Interests</label>
+        <div class="options">
+          <label><input type="checkbox" name="sport" value="football"> Football</label>
+          <label><input type="checkbox" name="sport" value="basketball"> Basketball</label>
+          <label><input type="checkbox" name="sport" value="baseball"> Baseball</label>
+          <label><input type="checkbox" name="sport" value="hockey"> Hockey</label>
+          <label><input type="checkbox" name="sport" value="soccer"> Soccer</label>
+          <label><input type="checkbox" name="sport" value="other"> Other</label>
+        </div>
+      </div>
+
+      <div>
+        <label class="section-title" for="reason">Why do you want to become a member?</label>
+        <textarea id="reason" placeholder="Please tell us why you want to join"></textarea>
+      </div>
+
+      <div class="agree">
+        <input type="checkbox" id="agree">
+        <label for="agree">I agree to the terms and conditions.</label>
+      </div>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+</body>
+</html>
